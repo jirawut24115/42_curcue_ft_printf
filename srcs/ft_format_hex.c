@@ -6,7 +6,7 @@
 /*   By: jichompo <jichompo@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 16:24:50 by jichompo          #+#    #+#             */
-/*   Updated: 2024/02/17 17:19:13 by jichompo         ###   ########.fr       */
+/*   Updated: 2024/02/18 06:16:17 by jichompo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,16 @@ int	ft_print_ptr(void *p)
 
 	result = 0;
 	ptr = (unsigned long long)p;
+	if (!p)
+	{
+		result += write (1, "(nil)", 5);
+		return (result);
+	}
 	result += write(1, "0x", 2);
 	result = hex_ptr(HEX, ptr, result);
 	return (result);
 }
+
 int	ft_print_hex(unsigned int num, char x)
 {
 	int		result;

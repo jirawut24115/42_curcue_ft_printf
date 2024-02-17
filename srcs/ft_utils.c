@@ -6,7 +6,7 @@
 /*   By: jichompo <jichompo@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:21:29 by jichompo          #+#    #+#             */
-/*   Updated: 2024/02/17 17:09:04 by jichompo         ###   ########.fr       */
+/*   Updated: 2024/02/18 05:40:10 by jichompo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ int	ft_putstr(char *s)
 
 	result = 0;
 	if (!s)
-		return (0);
+	{
+		result += write (1, "(null)", 6);
+		return (result);
+	}
 	while (*s)
 	{
 		result += write (1, s, 1);
